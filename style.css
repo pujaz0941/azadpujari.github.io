@@ -1,19 +1,105 @@
 
+/* Base Layout */
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #f4f7f6;
+  color: #333;
   margin: 0;
-  padding: 2em;
+  padding: 0;
 }
+
 h1 {
   text-align: center;
   color: #0c9c83;
 }
+
+header {
+  background: #fff;
+  padding: 1em 2em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2em;
+}
+
+/* Accordion (Projects.html) */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.accordion-item {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+  padding: 1em;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  background: #f7f7f7;
+}
+
+.accordion-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.accordion-body {
+  display: none;
+  padding: 1em;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.accordion-body h3 {
+  margin-bottom: 0.3em;
+  color: #0c9c83;
+}
+
+.accordion-body ul {
+  padding-left: 1.2em;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Timeline (Projourney.html) */
 .timeline {
   position: relative;
   max-width: 1100px;
   margin: 4em auto;
 }
+
 .timeline::after {
   content: '';
   position: absolute;
@@ -23,70 +109,92 @@ h1 {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
+
 .timeline-entry {
   position: relative;
   width: 50%;
-  padding: 1.5em 2em;
+  padding: 2em 2em;
   box-sizing: border-box;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease-in-out;
 }
+
 .timeline-entry.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
 .timeline-entry .content {
   padding: 1em 1.5em;
   border-radius: 8px;
   position: relative;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #fff;
+  border-left: 5px solid #0c9c83;
 }
+
 .timeline-entry:nth-child(odd) .content {
   background-image: linear-gradient(135deg, #ffe3e3, #fff0f0);
+  border-left-color: #e57373;
 }
+
 .timeline-entry:nth-child(even) .content {
   background-image: linear-gradient(135deg, #e3f7ff, #d0f0ff);
+  border-left-color: #64b5f6;
 }
+
 .timeline-entry .content h3 {
   margin: 0;
   color: #0c9c83;
   font-size: 1.2em;
 }
+
 .timeline-entry .content p {
   margin: 0.5em 0 0;
   font-size: 0.85em;
   color: #444;
 }
+
 .timeline-entry .circle {
   position: absolute;
-  top: 20px;
-  width: 28px;
-  height: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: white;
-  border: 4px solid #0c9c83;
+  background: #fff;
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.65em;
-  color: #0c9c83;
+  font-size: 0.75em;
   font-weight: bold;
+  border: 4px solid #0c9c83;
 }
+
 .timeline-entry.left {
   left: 0;
 }
+
 .timeline-entry.left .circle {
-  right: -14px;
+  right: -20px;
+  border-color: #e57373;
+  background-color: #ffe3e3;
 }
+
 .timeline-entry.right {
   left: 50%;
 }
+
 .timeline-entry.right .circle {
-  left: -14px;
+  left: -20px;
+  border-color: #64b5f6;
+  background-color: #e3f7ff;
 }
+
 @media screen and (max-width: 768px) {
   .timeline::after {
     left: 20px;
