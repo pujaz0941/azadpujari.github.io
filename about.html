@@ -5,51 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    .hero-banner {
+      position: relative;
+      background-image: url('images/ai-galaxy.jpg');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 80vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      padding: 2em;
+    }
+
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 1em;
+      text-transform: capitalize;
+    }
+
+    .hero-content p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      margin: 0.8em 0;
+      text-align: justify;
+    }
+
+    .hero-content .btn {
+      display: inline-block;
+      margin-top: 2em;
+      padding: 0.75em 1.5em;
+      background-color: #0c9c83;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="experience.html">Professional Journey</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="education.html">Education</a></li>
+        <li><a href="projourney.html">Timeline</a></li>
       </ul>
     </nav>
   </header>
-  <main class="about-section">
-    <section class="about-me">
-      <div class="about-text">
-        <h1>About Me</h1>
-         <ul>
-  <li>15+ years of IT experience in software product development, consulting, and delivery</li>
-  <li>9+ years leading sprint-sized software delivery teams across diverse domains and verticals</li>
-  <li>Led product discovery sessions, roadmap planning, and incremental release delivery</li>
-  <li>Maintained wiki-based documentation: site maps, flow diagrams, and user manuals</li>
-  <li>15 plus certifications including PSM I, PMP, SAFe, AWS, MS Azure, and CompTIA Cybersecurity</li>
-  <li>Consulted with Fortune clients like AIG, EY, Mercer, MetLife, Statefarm, and T-Mobile</li>
-  <li>Delivered digital transformation solutions for web apps, XaaS, and cloud technologies</li>
-  <li>Managed and worked in projects in Java, .NET, APIs, Angular, React, HTML, CSS, and no/low-code platforms</li>
-  <li>Proficient in Generative AI, ChatGPT, prompt engineering, vibecoding, and copilot tools</li>
-  <li>Worked across geographies including USA, ANZ, Europe, South Africa, Singapore, and UK</li>
-  <li>Collaborated with DevOps, C-suite leaders, and product engineering management teams</li>
-</ul>
-        
-        <a class="btn" href="Azad_Pujari_Resume.pdf" download>Download CV</a>
-      </div>
-      <div class="about-image">
-        <img src="images/profile.jpg" alt="Azad Pujari">
-      </div>
-    </section>
 
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1>Who Am I?</h1>
+      <p>Experienced IT professional with 15+ years of driving innovation in product development, consulting, and digital transformation.</p>
+      <p>Skilled in building and leading agile teams, product discovery, and delivering scalable enterprise solutions.</p>
+      <p>Trusted by global Fortune clients for modernizing platforms using cloud, AI, APIs, and low-code technologies.</p>
+      <p>15+ certifications across Scrum, PMP, SAFe, AWS, Azure, and cybersecurity domains.</p>
+      <p>Collaborator with DevOps, C-suite, and stakeholders across USA, Europe, ANZ, and beyond.</p>
+      <a class="btn" href="Azad_Pujari_Resume.pdf" download>Download CV</a>
+    </div>
+  </section>
+
+  <main class="about-section">
     <section class="skills">
       <h2>My Skills</h2>
       <p>I do all kinds of neat stuff</p>
       <div class="skills-grid">
         <div class="skill-item">
-          <img src="icons/vv.svg" alt="Creative">
+          <img src="icons/creative.svg" alt="Creative">
           <h3>Creative Direction</h3>
           <p>Concept, design, and lead communication strategies.</p>
         </div>
